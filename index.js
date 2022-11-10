@@ -1,5 +1,4 @@
 const express = require("express");
-const data = require("./rules.json");
 const { writeFile } = require("fs");
 
 const path = "./rules.json";
@@ -9,6 +8,8 @@ app.use(express.json());
 app.listen(8080, () => {
   console.log("Golder rules server is runing ");
 });
+
+let data = require("./rules.json");
 
 // ------------
 // Routes
@@ -47,14 +48,16 @@ app.post("/rules/new-rule", (req, res) => {
       },
     ];
 
-    writeFile(path, JSON.stringify(newData), (error) => {
+    data = newData;
+
+    writeFile(path, JSON.stringify(data), (error) => {
       if (error) {
         console.log("An error has occurred ", error);
         return;
       }
       console.log("New Rule successfully added to json");
     });
-    return res.status(201).send(newData);
+    return res.status(201).send(data);
   }
 });
 
@@ -95,14 +98,16 @@ app.put("/rules/:id", (req, res) => {
           tags: req.body.tags || [],
         },
       ];
-      writeFile(path, JSON.stringify(newData), (error) => {
+
+      data = newData;
+      writeFile(path, JSON.stringify(data), (error) => {
         if (error) {
           console.log("An error has occurred ", error);
           return;
         }
         console.log(`Rule ${id} created successfully`);
       });
-      return res.status(201).send(newData);
+      return res.status(201).send(data);
     }
   }
 });
