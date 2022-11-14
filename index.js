@@ -1,10 +1,18 @@
 const express = require("express");
+const cors = require("cors");
 const { writeFile } = require("fs");
 
 const path = "./rules.json";
 
 const app = express();
 app.use(express.json());
+
+app.use(
+  cors({
+    origin: "https://golden-rules.vercel.app/",
+  })
+);
+
 app.listen(8080, () => {
   console.log("Golder rules server is runing ");
 });
