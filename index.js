@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://golden-rules-server.vercel.app/",
+    origin: "*",
     optionsSuccessStatus: 200,
     methods: "GET, PUT, PATCH, POST, DELETE",
   })
