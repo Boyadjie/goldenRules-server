@@ -7,6 +7,7 @@ const path = "./rules.json";
 const app = express();
 app.use(express.json());
 
+// need improvement because it's not safe like that.
 app.use(
   cors({
     origin: "*",
