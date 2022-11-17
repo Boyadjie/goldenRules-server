@@ -10,19 +10,19 @@ app.use(express.json());
 // need improvement because it's not safe like that.
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://192.168.1.100:3000/",
     optionsSuccessStatus: 200,
     methods: "GET, PUT, PATCH, POST, DELETE",
   })
 );
 
-app.use(
-  cors({
-    origin: "https://golden-rules.vercel.app",
-    optionsSuccessStatus: 200,
-    methods: "GET, PUT, PATCH, POST, DELETE",
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://golden-rules.vercel.app/",
+//     optionsSuccessStatus: 200,
+//     methods: "GET, PUT, PATCH, POST, DELETE",
+//   })
+// );
 
 app.listen(8080, () => {
   console.log("Golder rules server is runing ");
