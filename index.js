@@ -7,10 +7,19 @@ const path = "./rules.json";
 const app = express();
 app.use(express.json());
 
-// need improvement because it's not safe like that.
+// localhost
+
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000",
+//     optionsSuccessStatus: 200,
+//     methods: "GET, PUT, PATCH, POST, DELETE",
+//   })
+// );
+
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://golden-rules.vercel.app/",
     optionsSuccessStatus: 200,
     methods: "GET, PUT, PATCH, POST, DELETE",
   })
