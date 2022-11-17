@@ -25,14 +25,6 @@ app.use(
   })
 );
 
-// app.use(
-//   cors({
-//     origin: "https://golden-rules.vercel.app/",
-//     optionsSuccessStatus: 200,
-//     methods: "GET, PUT, PATCH, POST, DELETE",
-//   })
-// );
-
 app.listen(8080, () => {
   console.log("Golder rules server is runing ");
 });
