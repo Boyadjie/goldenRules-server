@@ -10,7 +10,15 @@ app.use(express.json());
 // need improvement because it's not safe like that.
 app.use(
   cors({
-    origin: "*",
+    origin: "http://localhost:3000",
+    optionsSuccessStatus: 200,
+    methods: "GET, PUT, PATCH, POST, DELETE",
+  })
+);
+
+app.use(
+  cors({
+    origin: "https://golden-rules-server.vercel.app",
     optionsSuccessStatus: 200,
     methods: "GET, PUT, PATCH, POST, DELETE",
   })
