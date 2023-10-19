@@ -19,7 +19,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["https://golden-rules.vercel.app, https://boyadjie.github.io/goldenRules/"],
+    origin: ["https://golden-rules.vercel.app", "https://boyadjie.github.io"],
     optionsSuccessStatus: 200,
     methods: "GET, PUT, PATCH, POST, DELETE",
   })
